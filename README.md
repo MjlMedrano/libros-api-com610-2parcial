@@ -8,11 +8,11 @@ API REST de libros (Node.js + Express) desplegada en **Amazon EC2** con persiste
 
 | Elemento | Enlace |
 |---|---|
-| URL pública de la API | `http://<COMPLETAR_IP_PUBLICA_EC2>` |
-| Health check | `http://<COMPLETAR_IP_PUBLICA_EC2>/health` |
-| Ejecución exitosa de CI | `<COMPLETAR_URL_RUN_CI>` |
-| Ejecución exitosa de CD | `<COMPLETAR_URL_RUN_CD>` |
-| Imagen en Docker Hub | `<COMPLETAR_URL_DOCKERHUB>` |
+| URL pública de la API | `http://http://54.20.111.181/` |
+| Health check | `http://http://54.20.111.181/health` |
+| Ejecución exitosa de CI | `https://github.com/MjlMedrano/libros-api-com610-2parcial/actions/runs/44620492398` |
+| Ejecución exitosa de CD | `https://github.com/MjlMedrano/libros-api-com610-2parcial/actions/runs/44620492219` |
+| Imagen en Docker Hub | `https://hub.docker.com/repository/docker/adrianmedrano15/libros-api` |
 
 ## Endpoints
 
@@ -44,7 +44,7 @@ evidencias/     capturas de pantalla
 
 ```bash
 npm ci
-cp .env.example .env      # completar con tus datos (el archivo .env NO se sube al repositorio)
+cp .env.example .env      #  (el archivo .env NO se sube al repositorio)
 npm start                 # http://localhost:3000/health
 ```
 
@@ -70,10 +70,10 @@ La configuración de RDS entra solo por variables de entorno (`DB_HOST`, `DB_POR
 
 | Recurso | Nombre | Detalle |
 |---|---|---|
-| EC2 | `<COMPLETAR>` | Ubuntu 24.04, t3.micro/t2.micro, Nginx + Docker |
-| RDS | `<COMPLETAR>` | MySQL, **acceso público deshabilitado**, misma VPC que EC2 |
-| SG de EC2 (`<COMPLETAR>`) | | 22 solo desde mi IP; 80 desde Internet |
-| SG de RDS (`<COMPLETAR>`) | | 3306 únicamente desde el SG de EC2 |
+| EC2 | `amm-libros-ec2` | Ubuntu 24.04, t3.micro/t2.micro, Nginx + Docker |
+| RDS | `amm-libros-rds` | MySQL, **acceso público deshabilitado**, misma VPC que EC2 |
+| SG de EC2 | (`amm-ec2-sg`)  | 22 solo desde mi IP; 80 desde Internet |
+| SG de RDS | (`amm-rds-sg`)  | 3306 únicamente desde el SG de EC2 |
 
 Los puertos 3000 y 3306 no se publican a Internet: la API escucha en `127.0.0.1:3000` y solo Nginx (puerto 80) la expone.
 
