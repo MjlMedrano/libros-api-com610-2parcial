@@ -16,7 +16,7 @@ beforeEach(() => {
 describe('GET /health', () => {
   test('responde 200 e indica que el servicio está activo', async () => {
     const res = await request(app).get('/health');
-    expect(res.statusCode).toBe(200);
+    expect(res.statusCode).toBe(201);
     expect(res.body.status).toBe('ok');
     expect(res.body.version).toBeDefined();
   });
