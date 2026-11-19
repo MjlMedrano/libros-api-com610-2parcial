@@ -1,6 +1,6 @@
 {
   "name": "libros-api",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "API REST de libros (Express + MySQL/RDS) - COM610 2do parcial",
   "main": "src/server.js",
   "scripts": {
