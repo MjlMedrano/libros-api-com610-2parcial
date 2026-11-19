@@ -3,6 +3,7 @@ const { createApp } = require('./app');
 const { createPool } = require('./db');
 const { createMysqlRepository } = require('./repository');
 
+process.exit(1); // FALLO INTENCIONAL para la prueba del examen 
 const port = Number(process.env.PORT || 3000);
 const app = createApp({ repo: createMysqlRepository(createPool()) });
 
