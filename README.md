@@ -89,8 +89,8 @@ Los puertos 3000 y 3306 no se publican a Internet: la API escucha en `127.0.0.1:
 ## Cómo verificar el despliegue
 
 ```bash
-curl http://<IP_PUBLICA>/health       # {"status":"ok","service":"libros-api","version":"...","commit":"<sha>"}
-curl http://<IP_PUBLICA>/libros
+curl http://54.20.111.181/health       # {"status":"ok","service":"libros-api","version":"...","commit":"<sha>"}
+curl http://54.20.111.181/libros
 ```
 
 El campo `commit` coincide con el SHA del último despliegue exitoso y `version` refleja `package.json`.
